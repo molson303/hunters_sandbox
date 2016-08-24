@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def feed
     @products = Product.unclaimed
+
   end
 
   # GET /products/1

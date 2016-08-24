@@ -1,0 +1,51 @@
+<%= form_for(@user, html: {multipart: true, class: 'form-horizontal' }) do |f| %>
+<%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <%= f.file_field :avatar, class: "no-border" %>
+
+
+
+    <%= f.form_group :firstname do |f| %>
+      <%= f.label :firstname, class: 'form-label col-md-2' %>
+      <div class='col-md-8'>
+        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.error_messages %>
+      </div>
+    <% end %>
+
+    <%= f.form_group :lastname do |f| %>
+        <%= f.label :lastname, class: 'form-label col-md-2' %>
+        <div class='col-md-8'>
+          <%= f.text_field :description, class: 'form-control' %>
+          <%= f.error_messages %>
+        </div>
+    <% end %>
+
+    <%= f.form_group :hobby do |f| %>
+      <%= f.label :hobby, class: 'form-label col-md-2' %>
+      <div class='col-md-8'>
+        <%= f.text_field :price, class: 'form-control' %>
+        <%= f.error_messages %>
+      </div>
+    <% end %>
+
+    <%= f.form_group :active do |f| %>
+      <%= f.label :active, class: 'form-label col-md-2' %>
+      <div class='col-md-8'>
+        <%= f.check_box :active, class: 'form-control' %>
+        <%= f.error_messages %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="form-actions col-md-offset-3 col-md-9">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to "Cancel", products_path, class: 'btn' %>
+  </div>
+
+
+
+<% end %>

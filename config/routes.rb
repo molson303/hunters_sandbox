@@ -17,11 +17,13 @@ Rails.application.routes.draw do
 
   get 'hunt' => 'users#hunt'
   get 'sell' => 'users#sell'
-  get 'feed' => 'users#feed'
+  get 'feed' => 'products#index'
+  get 'profile' => 'users#profile'
 
   get 'cart' => 'carts#show'
   get 'wishlist' => 'wishlist#index'
   get 'destroy_wishes' => 'wishes#destroy_wishes'
+
 
   resources :orders
 
