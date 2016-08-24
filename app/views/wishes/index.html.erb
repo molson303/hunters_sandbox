@@ -1,0 +1,36 @@
+<% @title = "My Wish List" %>
+
+
+<div class="sheet sheet-condensed">
+  <div class="sheet-inner">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Notes</th>
+          <th>User</th>
+          <th>Product</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @wishes.each do |wish| %>
+        <tr>
+          <td><%= wish.notes %></td>
+          <td><%= wish.user_id %></td>
+          <td><%= wish.product_id %></td>
+          <td class="actions">
+            <%= link_to icon_tag("eye"), wish, rel: 'tooltip', title: 'Show' %>
+            <%= link_to icon_tag("pencil"), edit_wish_path(wish), rel: 'tooltip', title: 'Edit' %>
+            <%= link_to icon_tag("trash-o"), wish, rel: 'tooltip', title: 'Delete',
+                        data: { confirm: 'Are you sure?' }, method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+      <% if @wishes.length == 0 %>
+        <tr><td colspan=42 class='text-center'>No wishes.</td></tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div><!-- /.sheet-inner -->
+</div><!-- /.sheet -->
+
